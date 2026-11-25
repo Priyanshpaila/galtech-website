@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-amber-flame: #f06413;
+  --color-honey-glow: #feab30;
+  --color-signal-blue: #0088ff;
+  --color-bright-blue: #1c95ff;
+  
+  /* Monochrome Scale */
+  --color-pure-white: #ffffff;
+  --color-snow-gray: #f5f5f7;
+  --color-mist: #f0f0f0;
+  --color-silver: #d0d0d3;
+  --color-pewter: #ababb0;
+  --color-smoke: #6e6e73;
+  --color-ink: #101010;
+  --color-true-black: #000000;
+
+  /* Category Accents */
+  --color-vivid-green: #34c759;
+  --color-electric-magenta: #cb30e0;
+  --color-alert-red: #ff383c;
+
+  /* Typography */
+  --font-system-ui: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  
+  /* Radii */
+  --radius-cards: 20px;
+  --radius-buttons: 100px;
+  
+  /* Shadows */
+  --shadow-ambient: 0px 0px 30px 0px rgba(16, 16, 16, 0.1);
+}
+
+/* Custom Base & Utility Classes */
+html, body {
+  background-color: #ffffff;
+  color: #101010;
+  font-family: var(--font-system-ui);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Lenis Smooth Scrolling Required Setup */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Amber Flame Text Gradient - STRICT RULE: Strictly for Text only */
+.text-amber-gradient {
+  background: linear-gradient(0deg, #f06413 -29.375%, #feab30 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tight native-OS letter spacing for headings >= 54px */
+.tight-heading {
+  letter-spacing: -0.04em;
+}
+
+.tight-heading-xl {
+  letter-spacing: -0.06em;
+}
+
+/* Custom Pill Buttons - STRICT RULE: Signal Blue background (#0088ff), 100px radius */
+.btn-pill-primary {
+  background-color: var(--color-signal-blue);
+  color: #ffffff;
+  border-radius: var(--radius-buttons);
+  padding: 14px 28px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-pill-primary:hover {
+  background-color: var(--color-bright-blue);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(0, 136, 255, 0.35);
+}
+
+.btn-pill-secondary {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-buttons);
+  padding: 14px 28px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-pill-secondary:hover {
+  background-color: rgba(16, 16, 16, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Feature Cards - STRICT RULE: Pure white on snow gray, 20px radius, ambient shadow */
+.card-enterprise {
+  background-color: #ffffff;
+  border-radius: var(--radius-cards);
+  box-shadow: var(--shadow-ambient);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-enterprise:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 10px 40px 0px rgba(16, 16, 16, 0.14);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #d0d0d3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ababb0;
+}
